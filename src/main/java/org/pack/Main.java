@@ -7,7 +7,7 @@ public class Main {
 
         Window window = Window.getWindow();
 
-        //
+        // Create a window with the default
         Thread thread = new Thread(window);
         thread.start();
     }
