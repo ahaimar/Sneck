@@ -1,11 +1,14 @@
 package org.pack;
 
-public class Time {
+/** Monotonic seconds since the class was loaded, used to drive the fixed timestep loop. */
+public final class Time {
 
-    public static double timeStarted = System.nanoTime();
+    private static final long STARTED_AT = System.nanoTime();
+
+    private Time() {
+    }
 
     public static double getTime() {
-        // Calculate the current time in seconds from the start time in nanoseconds.
-        return (System.nanoTime() - timeStarted) / 1_000_000_000.0;
+        return (System.nanoTime() - STARTED_AT) / 1_000_000_000.0;
     }
 }
